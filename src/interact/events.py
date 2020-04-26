@@ -1,4 +1,4 @@
-redis_host = 'redis-server'
+redis_host = 'redis-link'
 redis_port = '6379'
 
 sys_port = '8080'
@@ -8,7 +8,7 @@ unsub = ('unsubscribe', 'punsubscribe', 'EXIT')
 
 
 def conn():
-    host = (input('Enter ip of host with redis container (default redis-server):') or redis_host)
+    host = (input('Enter ip of host with redis container (default redis-link):') or redis_host)
     return host, redis_port if host == redis_host else sys_port
 
 
@@ -33,4 +33,4 @@ def msgs(msg):
 
 
 def close_chat():
-    return input('Enter EXIT to close chat') in unsub
+    return input('Enter EXIT to close chat ') in unsub
